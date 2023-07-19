@@ -2,11 +2,12 @@ import Head from "next/head.js";
 import { Context } from "@/store/index.js";
 import TodoList from "../components/TodoList";
 import { useReducer } from "react";
-import { users } from "@/store/index.js";
+import { todos } from "@/store/index.js";
 import { check } from "@/store/reducers.js";
+import { Login } from "./Login.jsx";
 
 export default function Home() {
-  const [state, dispatch] = useReducer(check, users);
+  const [state, dispatch] = useReducer(check, todos);
 
   return (
     <>
@@ -17,6 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Context.Provider value={{ state, dispatch }}>
+        <Login />
         <TodoList />
       </Context.Provider>
     </>

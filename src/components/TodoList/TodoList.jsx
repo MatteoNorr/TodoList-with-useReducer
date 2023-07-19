@@ -16,6 +16,7 @@ const TodoList = () => {
       type: "add",
       payload: value,
     });
+    setValue("");
   };
 
   return (
@@ -26,6 +27,7 @@ const TodoList = () => {
           text="text"
           placeholder="Add todo"
           onChange={(e) => onChangeValue(e)}
+          value={value}
         />
         <input type="submit" value="+" />
       </form>

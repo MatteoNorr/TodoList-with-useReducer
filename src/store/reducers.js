@@ -18,6 +18,12 @@ export const check = (state, action) => {
           checked: false,
         },
       ];
+    case "login":
+      return state.filter((todos) =>
+        todos.username === action.username && todos.password === action.password
+          ? [...state]
+          : null
+      );
     default:
       return state;
   }
