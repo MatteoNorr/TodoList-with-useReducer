@@ -1,10 +1,13 @@
 import Head from "next/head.js";
-import { GET } from "../utils/https.js";
-import { Context, users } from "@/states/index.js";
+import { Context } from "@/store/index.js";
 import TodoList from "../components/TodoList";
-import DefaultLayout from "@/components/layouts/DefaultLayout/DefaultLayout.jsx";
+import { useReducer } from "react";
+import { users } from "@/store/index.js";
+import { check } from "@/store/reducers.js";
 
 export default function Home() {
+  const [state, dispatch] = useReducer(check, users);
+
   return (
     <>
       <Head>
@@ -13,21 +16,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Context.Provider value={users}>
-        <DefaultLayout>
-          <TodoList />
-        </DefaultLayout>
+      <Context.Provider value={{ state, dispatch }}>
+        <TodoList />
       </Context.Provider>
     </>
   );
-}
-
-export async function getServerSideProps(context) {
-  const data = await GET("people/1/");
-
-  return {
-    props: {
-      data: data,
-    },
-  };
 }
