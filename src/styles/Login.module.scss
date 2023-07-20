@@ -18,4 +18,45 @@
     background-color: rgb(82, 82, 243);
     cursor: pointer;
   }
+
+  button {
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    background-color: rgb(82, 82, 243);
+    cursor: pointer;
+  }
+}
+
+.loginOk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.356);
+  padding: 10px;
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(82, 82, 243);
+    border-radius: 20px;
+    margin: 0;
+    padding: 10px;
+  }
+
+  p {
+    margin: 2px;
+    color: #ffffff;
+  }
+
+  .logout {
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    background-color: #0096e0;
+    cursor: pointer;
+  }
 }

@@ -29,7 +29,6 @@
   }
 
   ul {
-    color: rgb(255, 255, 255);
     padding: 0 20px;
   }
 
@@ -39,6 +38,7 @@
     margin: 5px 0;
     padding: 20px;
     border-radius: 10px;
+    color: white;
     cursor: pointer;
 
     button {
@@ -48,10 +48,11 @@
   }
 
   .checked {
-    background-color: rgb(55, 210, 65);
+    background-color: #00a175;
+    text-decoration: line-through;
   }
 
   .unchecked {
-    background-color: rgb(255, 64, 64);
+    background-color: #0096e0;
   }
 }

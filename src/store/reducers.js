@@ -19,11 +19,12 @@ export const check = (state, action) => {
         },
       ];
     case "login":
-      return state.filter((todos) =>
-        todos.username === action.username && todos.password === action.password
-          ? [...state]
-          : null
+      return state.filter(
+        (todos) => todos.username === action.username && [...state]
       );
+    case "loginWithGoogle":
+      return action.payload;
+
     default:
       return state;
   }
